@@ -1,27 +1,63 @@
 {
-  "name": "sichigatsu",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+  "name": "genshin-damage-calculator",
+  "version": "1.0.0",
+  "description": "JavaScript library for calculating damage of Genshin Impact",
+  "type": "module",
+  "engines": {
+    "node": ">= 18.12"
   },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.3"
-  },
+  "main": "dist/main.js",
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.3"
-  }
+    "@hakatashi/eslint-config": "^1.20.0",
+    "@types/axios": "^0.14.0",
+    "@types/jest": "~29.5",
+    "@types/json-schema": "^7.0.15",
+    "@types/node": "~18",
+    "@types/node-persist": "^3.1.6",
+    "@typescript-eslint/eslint-plugin": "~6.2",
+    "@typescript-eslint/parser": "~6.2",
+    "ajv": "^8.12.0",
+    "eslint": "~8.46",
+    "eslint-config-prettier": "~9.0",
+    "eslint-plugin-jest": "~27.2",
+    "jest": "~29.6",
+    "js-yaml": "^4.1.0",
+    "json-schema-to-typescript": "^13.1.1",
+    "prettier": "~3.0",
+    "rimraf": "~5.0",
+    "ts-api-utils": "~1.0",
+    "ts-jest": "~29.1",
+    "tsx": "^4.1.1",
+    "typescript": "~5.1"
+  },
+  "scripts": {
+    "clean": "rimraf coverage dist tmp",
+    "prebuild": "npm run lint",
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -w -p tsconfig.json",
+    "build:release": "npm run clean && tsc -p tsconfig.release.json",
+    "lint": "eslint . --ext .ts --ext .mts",
+    "test": "jest --coverage",
+    "prettier": "prettier --config .prettierrc --write .",
+    "test:watch": "jest --watch"
+  },
+  "author": "Koki Takahashi <hakatasiloving@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^1.6.1",
+    "json-schema-to-ts": "^2.9.2",
+    "node-persist": "^3.1.3",
+    "tslib": "~2.6"
+  },
+  "volta": {
+    "node": "18.12.1"
+  },
+  "files": [
+    "__tests__/**/*",
+    "dist/**/*",
+    "src/**/*",
+    "tsconfig.json",
+    "README.md",
+    "LICENSE"
+  ]
 }
