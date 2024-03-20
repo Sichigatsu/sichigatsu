@@ -1,32 +1,18 @@
-# Logs
-logs
-*.log
-npm-debug.log*
+node_modules
+.env
 
-# Dependencies
-node_modules/
+# Hardhat files
+/cache
+/artifacts
 
-# Coverage
-coverage
+# TypeChain files
+/typechain
+/typechain-types
 
-# Transpiled files
-dist/
+# solidity-coverage files
+/coverage
+/coverage.json
 
-# VS Code
-.vscode
-!.vscode/tasks.js
-
-# JetBrains IDEs
-.idea/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Misc
-.DS_Store
-
-# Cache
-.cache
+# Foundry files
+/out
+/cache_forge
